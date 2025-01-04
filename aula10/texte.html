@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcluladora de Soma</title>
+    <style>
+        section {
+            background-image: linear-gradient(to right, red, rgba(64, 0, 255, 0.718));
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            height: 200px;
+            align-items: center;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        section h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            color: rgb(164, 228, 36);
+        }
+
+        div#central {
+            display: flex;
+            height: 70px;
+            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            border-radius: 10px;
+            background-color: brown;
+            border: 3px solid white;
+        }
+
+        input, div.total,p {
+            margin-left: 10px;
+            width: 70px;
+            border-radius: 10px;
+        }
+
+        div.total {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding-left: 5px;
+            margin-left: 50px;
+            width: 120px;
+            height: 30px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input.botao {
+            background-color: green;
+            border: 2px solid white;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Calculadora</h1>
+        <div id="central">
+            <input type="number" name="bnbn1" id="bnbn1">
+            <input type="number" name="bnbn2" id="bnbn2">
+            <input class="botao" type="button" value="calcular" onclick="calcular()" on>
+            <div id="total" class="total">Total</div>
+        </div>
+
+        <script>
+            function calcular(){
+                bn1 = document.getElementById('bnbn1')
+                bn2 = document.getElementById('bnbn2')
+                tt = document.getElementById('total')
+                n1 = Number(bn1.value)
+                n2 = Number(bn2.value)
+                s = n1 + n2 
+                tt.innerText = s
+            }
+
+            function clicar(){
+                bot = document.getElementsByClassName('botao')
+                bot.style.background = 'blue'
+            }
+        </script>
+    </section>
+
+
+
+</body>
+</html>
