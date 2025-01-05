@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input#txtn1[type=number]::-webkit-inner-spin-button,
+        input#txtn1[type=number]::-webkit-outer-spin-button{
+            display: none;
+        }
+
+        body {
+
+            background: url(imagens/background.jpg);
+            background-position: center left;
+            padding-left: 150px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background: url(imagens/background.jpg);
+            color: black;
+            margin-top: 170px;
+            border: 1px solid rgba(0, 0, 0, 0.416);
+            height: 200px;
+            width: 720px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        input#txtn1 {
+            width: 70px;
+            border-radius: 5px;
+        }
+
+        input.bot {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            margin-left: 10px;
+            border: 3px solid red;
+            background-color: white;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            width: 350px;
+            height: 30px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        div.sec1 {
+            width: 350px;
+            height: 180px;
+
+        }
+
+        div.sec2 {
+            font-weight: 100;
+            font-style: italic;
+            border: 2px solid rgba(174, 163, 163, 0.416);
+            width: 300px;
+            height: 180px;
+            margin-left: 30px;
+            border-radius: 10px;
+            background-color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-indent: 20px;
+            text-align: justify;
+        }
+    </style>
+
+</head>
+<body>
+    <section>
+        <div class="sec1">
+            <h1>Fiscalização de Velocidade</h1>
+            Medidor de velocidade: <input type="number" name="txt" id="txtn1" placeholder="km/h">
+            <input class="bot" type="button" value="ok" onclick="calcular()">
+            <div id="msg"></div>
+        </div>
+        <div class="sec2" id="sec2">
+
+        </div>
+    </section>
+
+    <script>
+        function calcular(){
+            tn1 = document.getElementById('txtn1')
+            msg = document.getElementById('msg')
+            ms2 = document.getElementById('sec2')
+            n1 = Number(tn1.value)
+            msg.innerHTML = `<p>Sua velocidade é de <strong>${n1}km/h.</strong></p>`
+            ms2.innerHTML = `<p>Isso aí, cidadão. Anda direitinho, cuida da família.</p><p>Tá de parabéns!</p><p>Vai com Deus, meu querido.</p>`
+            if (n1>80){
+                msg.innerHTML = `<h3>VOCÊ FOI MULTADO, SEU OTÁRIO!</h3> <p>Sua velocidade é de <strong>${n1}km/h, SEU JUMENTO.</strong></p>`
+                ms2.innerHTML = `<p>"Você não poder ter carro, seu cavalo. Vai andar de jumento até morrer, seu chifrudo.</p><p>Você só serve pra fazer a alegria do DETRAN e votar no Lula.</p><p>Bicho burro do caralho!"</p>`
+            }
+        }
+    </script>
+</body>
+</html>
