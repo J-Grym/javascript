@@ -8,6 +8,7 @@ body {
     height: 97vh;
     background-color: rgb(71, 118, 182);
     color: white;
+    transition: 6s;
 }
 
 header {
@@ -40,4 +41,8 @@ div {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+img {
+    transition: 2s;
 }
