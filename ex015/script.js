@@ -9,7 +9,7 @@ function verificar() {
     } else {
         fsex = document.getElementsByName('radsex')
         idade = ano - Number(fano.value)
-        gênero = ``
+        //gênero = ``
         img = document.createElement('img')
         img.setAttribute('id', 'foto')
         if (fsex [0].checked) {

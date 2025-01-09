@@ -4,6 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        body{
+            background-color: brown;
+        }
+
+        header{
+            text-align: center;
+        }
+
+        input.limpar{
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            background-color: chocolate;
+            color: white;
+            border: none;
+            margin-left: 5px;
+            box-shadow: 1px 1px 3px black;
+            cursor: pointer;
+        }
+
+        input.verificar{
+            margin-left: 10px;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            border: none;
+            height: 20px;
+            box-shadow: 2px 2px 5px black;
+            cursor: pointer;
+        }
+
+        input#dtano{
+            border-radius: 5px;
+            width: 50px;
+            margin-left: 5px;
+            color: black;
+        }
+
+        form{
+            display: flex;
+            justify-content: center;
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+        }
+
+        label{
+            margin-left: 20px;
+        }
+
+        div#res{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img{
+            width: 250px;
+            height: 250px;
+            border-radius: 25%;
+            background: rgb(103, 23, 23);
+            margin-top: 15px;
+        }
+
+        input#dtano[type=number]::-webkit-outer-spin-button,
+        input#dtano[type=number]::-webkit-inner-spin-button{
+            display: none;
+        }
+
+        
+    </style>
 </head>
 <body>
     <header>
@@ -11,13 +91,22 @@
     </header>
     <main>
         <section>
-            Digite aqui seu ano de nascimento: <input type="number" name="ano" id="dtano" itemid="txtentrada">
+            <form action="">
+                Digite aqui seu ano de nascimento: <input type="number" name="ano" id="dtano" min="1" placeholder="0000">
+                <input class="limpar" type="reset" value="L">
+                <input class="verificar" type="button" value="verificar" onclick="verificar()">
+            </form>
+            
 
-            <div>
-                <input type="button" value="verificar" onclick="verificar()">
-            </div>
-            <div id="res">
+            <p> Sexo:
+                <label for="masc">Masculino</label>
+                <input type="radio" name="sexo" id="masc" checked>
+                <label for="fem">Feminino</label>
+                <input type="radio" name="sexo" id="fem">
+            </p>
 
+            <div id="res"> <!--Resposta da idade-->
+                
             </div>
         </section>
     </main>
