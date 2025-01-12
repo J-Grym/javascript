@@ -4,15 +4,17 @@ function contar(){
   let passo = document.getElementById('txtp')
   let res = document.getElementById('res')
 
-  if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
-    alert('[ERRO!] Preencha todos os campos.')
+  res.innerHTML = 'Contando...'
+  
+  if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+    alert('[ERRO!]')
   } else {
-    let i = Number(ini.value)
-    let f = Number(fim.value)
-    let p = Number(passo.value)
-    
-    for ( c = i; c <= f; c += p){
+      let i = Number(ini.value)
+      let f = Number(fim.value)
+      let p = Number(passo.value)
+
+      for (c = i; c <= f; c += p){
         res.innerHTML += `${c}`
-    }
+      }
   }
 }
