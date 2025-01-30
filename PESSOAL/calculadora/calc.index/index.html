@@ -14,42 +14,35 @@
              </div>
          </div>
         <div class="tela">
-            <div class="sinal"></div>
-            <div id="visor" class="display"></div>
+            <div id="lembrete" class="sinal"></div>
+            <div id="display" class="display"></div>
             
         </div>
         <div class="teclado">
-            <button>M</button>
-            <button>MR</button>
-            <button>MC</button>
-            <button>«</button>
-            <button class="operador">*</button>
+            <button onclick="memoria()">M</button>
+            <button onclick="retorne()">MR</button>
+            <button onclick="limpar()">MC</button>
+            <button onclick="back()">«</button>
+            <button onclick="operadores('*')" class="operador">*</button>
             <button onclick="insert('1')">1</button>
             <button onclick="insert('2')">2</button>
             <button onclick="insert('3')">3</button>
             <button>%</button>
-            <button class="operador">/</button>
+            <button onclick="operadores('/')" class="operador">/</button>
             <button onclick="insert('4')">4</button>
             <button onclick="insert('5')">5</button>
             <button onclick="insert('6')">6</button>
             <button onclick="insert('.')">.</button>
-            <button class="operador">-</button>
+            <button onclick="operadores('-')" class="operador">-</button>
             <button onclick="insert('7')">7</button>
             <button onclick="insert('8')">8</button>
             <button onclick="insert('9')">9</button>
-            <button>C</button>
-            <button class="operador">+</button>
+            <button onclick="apagar()">C</button>
+            <button onclick="operadores('+')" class="operador">+</button>
             <button onclick="insert('0')" class="gemeos">0</button>
-            <button class="gemeos">=</button>
+            <button onclick="calcular()" class="gemeos">=</button>
         </div>
     </section>
-
-    <script>
-        let display = document.getElementById('display')
-
-        function insert(num){
-            document.getElementById('display').textContent = num
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

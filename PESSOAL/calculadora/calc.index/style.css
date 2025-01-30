@@ -69,8 +69,9 @@ button:hover{
     align-items: center;
     justify-content: end;
     width: 275px;
-    font-size: 5em;
+    font-size: 3.5em;
     font-family: digital;
+    overflow: hidden;
 }
 .tituloPai{
     display: flex;
