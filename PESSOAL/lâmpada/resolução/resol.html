@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lampada</title>
+    <title>Document</title>
     <style>
         body{
             height: 97vh;
@@ -22,41 +22,25 @@
             position: relative;
         }
 
-        div#lampada::before{
-            content: '';
-            position: absolute;
-            background-image: url(acesa.jpg);
-            inset: 0;
-            opacity: 0;
-        }
-
-        div#lampada:hover::before{
-            opacity: 1;
-        }
-
-
-        
-
         
     </style>
 </head>
 <body>
     <div>
-        <img src="apagada.jpg" alt="" id="lampada">
+        <img src="apagada.jpg" alt="" id="lamp">
     </div>
     <div>
-        <button id="ligar">Ligar</button> 
-        <button id="desligar">Desligar</button>
+        <button id="ligar">ligar</button><button id="desligar">desligar</button>
     </div>
-    <script> 
-        let lampada = document.getElementById('lampada')
-        const ligar = document.getElementById('ligar')
-        const desligar = document.getElementById('desligar')
+
+    <script>
+        let lampada = document.getElementById('lamp')
+        let ligar = document.getElementById('ligar')
+        let desligar = document.getElementById('desligar')
 
         function vquebrada(){
             return lampada.src.indexOf('quebrada') > -1
         }
-
         function acender(){
             if (!vquebrada()){
                 lampada.src = 'acesa.jpg'
@@ -65,6 +49,11 @@
         function apagar(){
             if (!vquebrada()){
                 lampada.src = 'apagada.jpg'
+            }
+        }
+        function quebrar(){
+            if (!vquebrada()){
+                lampada.src = 'quebrada.jpg'
             }
         }
         function luz(){
@@ -77,15 +66,9 @@
                 lampada.src = 'apagada.jpg'
             }
         }
-        function quebrar(){
-            if (!vquebrada()){
-                lampada.src = 'quebrada.jpg'
-            }
-        }
-
-        lampada.addEventListener('dblclick', quebrar)
         lampada.addEventListener('mouseleave', breu)
         lampada.addEventListener('mouseover', luz)
+        lampada.addEventListener('dblclick', quebrar)
         desligar.addEventListener('click', apagar)
         ligar.addEventListener('click', acender)
     </script>

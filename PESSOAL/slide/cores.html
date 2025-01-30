@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideCores</title>
+    <style>
+
+        body{
+            height: 96vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+        }
+        #button{
+            padding-top: 10px;
+        }
+        .nulo{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="img" src="azul500.jpg" alt="">
+    </div>
+    <div id="buttons">
+        <button id="começar">começar</button>
+        <button class="nulo" id="verm">vermelho</button>
+        <button class="nulo" id="verd">verde</button>
+        <button class="nulo" id="azl">azul</button>
+    </div>
+
+    <script>
+        let img = document.getElementById('img')
+        const buttons = document.getElementById('buttons')
+        let coresIndex = 0
+        let comer = document.getElementById('começar')
+
+        const slider = () => bot[event.target.id]()
+
+        function iniciar(){
+            if (coresIndex < 2){
+                coresIndex++
+                comer.style.display = 'none'
+            } else {
+                coresIndex = 0
+            }
+        }
+
+        function slide(){
+            const cores = ['verm', 'verd', 'azl']
+            const cor = cores [coresIndex]
+            bot[cor]()
+            iniciar()
+        }
+
+        const bot = {
+            'verm': () => img.src = 'vermelho500.jpg',
+            'verd': () => img.src = 'verde500.jpg',
+            'azl' : () => img.src = 'azul500.jpg',
+            'começar': () => setInterval(slide, 1000)
+        }
+
+        buttons.addEventListener('click', slider)
+    </script>
+</body>
+</html>

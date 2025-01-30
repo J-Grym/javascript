@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 96vh;
+        }
+        img{
+            height: 400px;
+        }
+        button {
+            width: 70px;
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+        <div class="img">
+            <img id="img" src="vermelho.jpg" alt="">
+        </div>
+        <div id="buttons">
+            <button id="verm">vermelho</button>
+            <button id="amar">amarelo</button>
+            <button id="verd">verde</button>
+            <button id="au">auto</button>
+        </div>
+
+        <script>
+            const img = document.getElementById('img')
+            const buttons = document.getElementById('buttons')
+            let colorIndex = 0
+            
+            const trafficLght = (event) => { 
+                turnOn[event.target.id]()
+            }
+
+            const nextIndex = () => {
+                if (colorIndex < 2){
+                    colorIndex++
+                } else {
+                    colorIndex = 0
+                }
+            }
+
+            const changeColor = () => {
+                const colors = ['amar', 'verd', 'verm']
+                const color = colors [colorIndex]
+                turnOn[color]()
+                nextIndex()
+            }
+
+            const turnOn = {       //<=Objeto literal
+                'amar': () => img.src = 'amarelo.jpg', //<=funções
+                'verd': () => img.src = 'verde.jpg',
+                'verm': () => img.src = 'vermelho.jpg',
+                'au'  : () => setInterval(changeColor, 1000)
+            }
+            buttons.addEventListener('click', trafficLght)
+        </script>
+    
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lampada</title>
+    <title>Document</title>
     <style>
         body{
             height: 97vh;
@@ -15,29 +15,13 @@
 
         div button{
             margin: 10px;
-            width: 70px;
+            width: 60px;
         }
 
         div#lampada{
             position: relative;
         }
 
-        div#lampada::before{
-            content: '';
-            position: absolute;
-            background-image: url(acesa.jpg);
-            inset: 0;
-            opacity: 0;
-        }
-
-        div#lampada:hover::before{
-            opacity: 1;
-        }
-
-
-        
-
-        
     </style>
 </head>
 <body>
@@ -45,49 +29,45 @@
         <img src="apagada.jpg" alt="" id="lampada">
     </div>
     <div>
-        <button id="ligar">Ligar</button> 
-        <button id="desligar">Desligar</button>
+        <button id="ld">Ligar</button> 
     </div>
-    <script> 
-        let lampada = document.getElementById('lampada')
-        const ligar = document.getElementById('ligar')
-        const desligar = document.getElementById('desligar')
 
+    <script>
+        let lampada = document.getElementById('lampada')
+        let botão = document.getElementById('ld')
+
+        function quebrar(){
+            lampada.src = 'quebrada.jpg'
+        }
+        function ver(){
+            return lampada.src.indexOf('acesa') >-1
+        }
         function vquebrada(){
             return lampada.src.indexOf('quebrada') > -1
         }
-
-        function acender(){
+        function bot(){
+            if (!ver() && !vquebrada()){
+                lampada.src = 'acesa.jpg'
+                botão.textContent = 'deligar'
+            } else if (!vquebrada()){
+                lampada.src = 'apagada.jpg'
+                botão.textContent = 'ligar'
+            }
+        }
+        function S(){
             if (!vquebrada()){
                 lampada.src = 'acesa.jpg'
             }
         }
-        function apagar(){
+        function E(){
             if (!vquebrada()){
                 lampada.src = 'apagada.jpg'
             }
         }
-        function luz(){
-            if (!vquebrada()){
-                lampada.src = 'acesa.jpg'
-            }
-        }
-        function breu(){
-            if (!vquebrada()){
-                lampada.src = 'apagada.jpg'
-            }
-        }
-        function quebrar(){
-            if (!vquebrada()){
-                lampada.src = 'quebrada.jpg'
-            }
-        }
-
+        lampada.addEventListener('mouseleave', E)
+        lampada.addEventListener('mouseover', S)
         lampada.addEventListener('dblclick', quebrar)
-        lampada.addEventListener('mouseleave', breu)
-        lampada.addEventListener('mouseover', luz)
-        desligar.addEventListener('click', apagar)
-        ligar.addEventListener('click', acender)
+        botão.addEventListener('click', bot)
     </script>
 </body>
 </html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>calculadora</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 96vh;
+        }
+
+        h1{
+            text-shadow: 2px 2px black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            height: 50px;
+            width: 230px;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 270px;
+            height: 470px;
+            border-radius: 10px;
+            background-color:rgb(19, 26, 125);
+        }
+
+        .tela{
+            display: flex;
+            align-items: center;
+            background-color: rgb(210, 210, 19);
+            border-radius: 7px;
+            height: 60px;
+            margin-bottom: 10px;
+            width: 210px;
+            justify-content: flex-end;
+            padding: 5px;
+            font-size: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .teclado{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 250px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button{
+            color: white;
+            background-color: black;
+            width: 50px;
+            height: 50px;
+            margin: 3px;
+            border-radius: 10px;
+            border: 2px solid white;
+            font-size: 20px;
+        }
+        button:hover{
+            background-color: rgb(86, 86, 152);
+            color: black;
+            cursor: pointer;
+        }
+        .operador{
+            background-color: orange;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    
+            <h1>calculadora</h1>
+        
+        <div id="display" class="tela"></div>
+        <div class="teclado" id="teclado">
+            <button onclick="addItem()">MR</button>
+            <button onclick="back()">«</button>
+            <button onclick="apagar()" style="background: green;">C</button>
+            <button onclick="operadores('*')" class="operador">*</button>
+            <button onclick="insert('1')">1</button>
+            <button onclick="insert('2')">2</button>
+            <button onclick="insert('3')">3</button>
+            <button onclick="operadores('/')" class="operador">/</button>
+            <button onclick="insert('4')">4</button>
+            <button onclick="insert('5')">5</button> 
+            <button onclick="insert('6')">6</button>
+            <button onclick="operadores('-')" class="operador">-</button>
+            <button onclick="insert('7')">7</button>
+            <button onclick="insert('8')">8</button>
+            <button onclick="insert('9')">9</button>
+            <button onclick="operadores('+')" class="operador">+</button>
+            <button onclick="insert('0')" style="width: 107px;">0</button>
+            <button onclick="calcular()" style="width: 107px;">=</button>
+            
+        </div>
+
+    </section>
+    <script>
+
+        let operador = false
+        
+        
+
+       function insert(num){
+        document.getElementById('display').textContent += num
+       }
+       function apagar(){
+        document.getElementById('display').textContent = ''
+        operador = false
+       }
+       function operadores(oper){
+        if (!operador){
+            document.getElementById('display').textContent += oper
+            operador = true
+            
+        } else {
+            document.getElementById('display').textContent = oper
+        }
+       }
+       function calcular(){
+        display = document.getElementById('display').textContent
+        document.getElementById('display').textContent = eval(display)
+        operador = false
+       }
+
+    </script>
+</body>
+</html>

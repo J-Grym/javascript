@@ -1,0 +1,91 @@
+@charset "utf-8";
+@font-face {
+    font-family: digital;
+    src: url(DS-DIGIT.TTF);
+}
+@font-face {
+    font-family: game;
+    src: url(Game\ Of\ Squids.otf);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    height: 96vh;
+}
+.calc{
+    width: 320px;
+    height: 465px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(45deg, #773243 30%, #FD8B29, rgb(91, 91, 226) 90%);
+}
+.teclado{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 310px;
+    margin-top: 10px;
+}
+button{
+    border: 1px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(128, 128, 128, 0.33);
+    font-weight: bolder;
+    font-size: 20px;
+}
+button:hover{
+    background-color: rgb(177, 172, 172);
+}
+.gemeos{
+    width: 150px;
+}
+.operador{
+    background-color: rgb(221, 150, 17);
+    color: white;
+}
+.tela{
+    display: flex;
+    height: 80px;
+    width: 290px;
+    padding: 5px;
+    background-color: rgb(196, 196, 59);
+}
+.sinal{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(137, 133, 133, 0.388);
+}
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 275px;
+    font-size: 5em;
+    font-family: digital;
+}
+.tituloPai{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 2px;
+}
+.titulo{
+    
+    margin-bottom: 10px;
+    font-family: game;
+    height: 15px;
+    font-size: 20px;
+    color: #0D0B98;
+    text-shadow: 2px 2px 0px #8b8ad3;
+    font-weight: bold;
+}
