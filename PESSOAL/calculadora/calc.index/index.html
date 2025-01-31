@@ -8,39 +8,36 @@
 </head>
 <body>
     <section class="calc">
-         <div class="tituloPai">
-             <div class="titulo">
-                GrymTec-2030
-             </div>
-         </div>
         <div class="tela">
             <div id="lembrete" class="sinal"></div>
             <div id="display" class="display"></div>
             
         </div>
         <div class="teclado">
-            <button onclick="memoria()">M</button>
-            <button onclick="retorne()">MR</button>
-            <button onclick="limpar()">MC</button>
-            <button onclick="back()">«</button>
+            <button class="trio" onclick="memoria() ">M</button>
+            <button class="trio" onclick="retorne() ">MR</button>
+            <button class="trio" onclick="limpar() ">MC</button>
+            <button class="trio" onclick="back()">«</button>
             <button onclick="operadores('*')" class="operador">*</button>
-            <button onclick="insert('1')">1</button>
-            <button onclick="insert('2')">2</button>
-            <button onclick="insert('3')">3</button>
-            <button>%</button>
+            <button onclick="insert('7')">7</button>
+            <button onclick="insert('8')">8</button>
+            <button onclick="insert('9')">9</button>
+            <button class="trio" onclick="porcent()">%</button>
             <button onclick="operadores('/')" class="operador">/</button>
             <button onclick="insert('4')">4</button>
             <button onclick="insert('5')">5</button>
             <button onclick="insert('6')">6</button>
-            <button onclick="insert('.')">.</button>
+            <button class="trio" onclick="insert('.')">.</button>
             <button onclick="operadores('-')" class="operador">-</button>
-            <button onclick="insert('7')">7</button>
-            <button onclick="insert('8')">8</button>
-            <button onclick="insert('9')">9</button>
-            <button onclick="apagar()">C</button>
+            <button onclick="insert('1')">1</button>
+            <button onclick="insert('2')">2</button>
+            <button onclick="insert('3')">3</button>
+            <button class="trio" style="font-size: 1em;" ondblclick="doisClicks()" onclick="reset()">C/OFF</button>
             <button onclick="operadores('+')" class="operador">+</button>
             <button onclick="insert('0')" class="gemeos">0</button>
-            <button onclick="calcular()" class="gemeos">=</button>
+            <button onclick="insert('00')" class="gemeos">00</button>
+            <button onclick="insert('000')" class="gemeos">000</button>
+            <button class="igual" onclick="calcular()" class="gemeos" style="width: 122px;">=</button>
         </div>
     </section>
     <script src="index.js"></script>

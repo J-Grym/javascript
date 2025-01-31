@@ -109,32 +109,37 @@
 
     </section>
     <script>
+        let display = document.getElementById('display')
+        let gatilho = false
+        let numberAnterior
+        let operador = []
 
-        let operador = false
-        
-        
-
-       function insert(num){
-        document.getElementById('display').textContent += num
-       }
-       function apagar(){
-        document.getElementById('display').textContent = ''
-        operador = false
-       }
-       function operadores(oper){
-        if (!operador){
-            document.getElementById('display').textContent += oper
-            operador = true
-            
-        } else {
-            document.getElementById('display').textContent = oper
+        function apagar(){
+            display.textContent = 0
         }
-       }
-       function calcular(){
-        display = document.getElementById('display').textContent
-        document.getElementById('display').textContent = eval(display)
-        operador = false
-       }
+        function insert(num){
+            if (display.textContent == 0){
+                display.textContent = num
+                gatilho = true
+            }else if (gatilho == true){
+                display.textContent += num
+            }
+        }
+        function operadores(oper){
+            numberAnterior = display.textContent
+            operador.push(oper)
+            display.textContent = 0
+        }
+        function calcular(){
+            let display = document.getElementById('display').textContent
+            document.getElementById('display').textContent = eval(numberAnterior + operador.toString() + display)
+            operador = []
+        }
+        function back(){
+             let display = document.getElementById('display').textContent
+            document.getElementById('display').textContent = eval(numberAnterior / 100 * display)
+        }
+
 
     </script>
 </body>
