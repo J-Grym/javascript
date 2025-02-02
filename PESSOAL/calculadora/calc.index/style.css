@@ -46,9 +46,11 @@ button{
     margin-left: 1px;
     margin-right: 1px;
     color: black;
+    transition: 0.3s;
 }
 button:hover{
-    background-color: rgb(177, 172, 172);
+    background-color: yellow;
+    color: black;
 }
 .trio{
     background-color: rgba(99, 93, 93, 0.715);
