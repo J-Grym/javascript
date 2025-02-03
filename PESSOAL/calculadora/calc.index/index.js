@@ -29,25 +29,29 @@ function insert(num){
 function ponto(num){
     if (display.textContent == ''){
         display.textContent = ''
-    } else if(display.textContent == 0){
+    } else if(gatilho == true || display.textContent == 0){
         display.textContent += num
         gatilho = true
     }
 }
 function operadores(oper){
-    numberAnterior = display.textContent 
-    operar.push(oper)
-    display.textContent = 0
-    gatilho = false
+        numberAnterior = display.textContent 
+        operar.push(oper)
+        display.textContent = 0
+        gatilho = false
+        operar2 = []
 }
+
 function calcular(){
     if(display.textContent == 0){
         display.textContent = 0
     } else {
         let display = document.getElementById('display').textContent
         document.getElementById('display').textContent = eval(numberAnterior + operar.toString() + display).toFixed(2)
+        gatilho = false
         operar = []
         numberAnterior = ''
+        controle = ''
     }
 
 }
@@ -73,3 +77,6 @@ function limpar(){
     lembrete.style.backgroundColor = ''
     lembrete.style.boxShadow = ''
 }
+
+
+
