@@ -9,7 +9,7 @@ let localC
 
 const insert = (num) => { if (display.textContent == ''){ display.textContent = ''}else if(gatilho == false){display.textContent = num , gatilho = true}else if(gatilho == true){display.textContent += num}}
 
-const memoria = () => { if(display.textContent == ''){ display.textContent = ''} else { localC = display.textContent , display.textContent = 0 , lembrete.style.backgroundColor = 'green' , lembrete.style.boxShadow = '0px 0px 5px green, inset 0px 0px 5px green'}}
+const memoria = () => { if(display.textContent == ''){ display.textContent = ''} else { localC = display.textContent , display.textContent = 0 , lembrete.style.backgroundColor = 'green' , lembrete.style.boxShadow = '0px 0px 5px green, inset 0px 0px 5px green', gatilho = false}}
 
 const retorne = () => { if(display.textContent == ''){display.textContent = ''} else if(localC == undefined){display.textContent = 0} else {display.textContent = localC}}
 
