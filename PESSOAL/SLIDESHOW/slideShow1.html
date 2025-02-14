@@ -6,12 +6,14 @@
     <title>Document</title>
     <style>
         body{
+            height: 96vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 96vh;
         }
         div.pai{
+            display: flex;
+            justify-content: space-between;
             box-shadow: 3px 3px 15px black;
             width: 350px;
             height: 200px;
@@ -19,37 +21,58 @@
         }
         div#container{
             display: flex;
-            background-color: black;
             border-radius: 10px;
+            position: absolute;
             width: 350px;
             height: 200px;
+            background-color: black;
             overflow: hidden;
         }
+        div.button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: transparent;
+            z-index: 1;
+            width: 20px;
+            border-radius: 10px;
+            transition: 0.7s;
+            user-select: none;
+        }
+        div.button:hover{
+            background-color: rgba(0, 0, 0, 0.342);
+            color: orange;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
         img{
+            border-radius: 10px;
             width: 350px;
             height: 200px;
-            border-radius: 10px;
+        }
+        div.item{
+            transition: 1s;
         }
         div.item:first-child{
             margin-left: -100%;
-        }
-        div.item{
-            transition: 2s;
         }
     </style>
 </head>
 <body>
     <div class="pai">
+        <div class="button" id="seguir">«</div>
         <div id="container"></div>
+        <div class="button" id="voltar">»</div>
     </div>
     <script>
         const imagem = [
             {'url': 'aiz-.jpg'},
             {'url': 'Overlord-.jpg'},
             {'url': 'albedo-.jpg'},
-            {'url': 'shalltear-.jpg'},
-            {'url': 'demiurge-.jpg'},
             {'url': 'Sebas-.jpg'},
+            {'url': 'demiurge-.jpg'},
+            {'url': 'shalltear-.jpg'},
             {'url': 'cocytos-.jpg'},
         ]
         const container = document.querySelector('#container')
@@ -63,6 +86,7 @@
             })
         }
         slideShow(imagem)
+
         let itens = document.querySelectorAll('.item')
 
         const seguir = () => {
@@ -70,7 +94,13 @@
             itens = document.querySelectorAll('.item')
         }
 
-        setInterval(seguir, 5000)
+        const voltar = () => {
+            const lastItem = itens[itens.length -1]
+            container.insertBefore(lastItem, itens[0])
+            itens = document.querySelectorAll('.item')
+        }
+        document.querySelector('#voltar').addEventListener('click', voltar)
+        document.querySelector('#seguir').addEventListener('click', seguir)
     </script>
 </body>
 </html>
