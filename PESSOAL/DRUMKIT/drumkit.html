@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 96vh;
+            background-image: url(./imagem/back.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
+            height: 500px;
+        }
+        div.title{
+            text-shadow: 0 0 15px orange, 0 0 15px orange, 0 0 15px orange;
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: yellow;
+        }
+        div.container{
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 500px;
+            height: 70px;
+            gap: 10px;
+        }
+        div.key{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.49);
+            width: 70px;
+            height: 70px;
+            color: white;
+            font-size: 2em;
+            border: 2px solid white;
+            user-select: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="title">DRUM KIT</div>
+        <div class="container" id="container">
+            <!--<div class="key">A</div>
+            <div class="key">S</div>
+            <div class="key">D</div>-->
+        </div>
+    </main>
+    <script>
+        'use strict'
+
+        const sons = {
+            'A': 'boom.wav',
+            'S': 'clap.wav',
+            'D': 'hihat.wav',
+            'F': 'kick.wav', 
+            'G': 'openhat.wav',
+            'H': 'ride.wav',
+            'J': 'snare.wav',
+            'K': 'tink.wav',
+            'L': 'tom.wav'
+        }
+
+        const criarDiv = (texto) => {
+            const div = document.createElement('div')
+            div.classList.add('key')
+            div.textContent = texto
+            div.id = texto
+            document.getElementById('container').appendChild(div)
+        }
+
+        const exibir = (sons) => {
+            Object.keys(sons).forEach(criarDiv)
+        }
+        
+
+        const ativarDiv = (event) => {
+            const letra = event.target.id
+            const letraPermitida = sons.hasOwnProperty(letra)
+            if (letraPermitida){
+                tocarSom(letra)
+            }
+        }
+
+        const tocarSom = (letra) => {
+            const audio = new Audio(`${sons[letra]}`)
+            audio.play()
+        }
+
+        exibir(sons)
+        document.getElementById('container').addEventListener('click', ativarDiv)
+    </script>
+</body>
+</html>

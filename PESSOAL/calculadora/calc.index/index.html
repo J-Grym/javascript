@@ -3,46 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
-    <section class="calc">
-        <div class="tela1">
-            <div class="tela2">
-                <div id="lembrete" class="sinal"></div>
-                <div id="operando2" class="operador2"></div>
+    <div class="calculadora">
+        <div class="tela">
+            <div class="sinais">
+                <div class="memoria" id="memoria"></div>
+                <div class="operador"></div>
             </div>
-            <div id="display" class="display"></div>
-            
+            <div class="display" id="display"></div>
         </div>
-        <div class="teclado">
-            <button class="trio" onclick="memoria() ">M</button>
-            <button class="trio" onclick="retorne() ">MR</button>
-            <button class="trio" onclick="limpar() ">MC</button>
-            <button id="bot" class="trio" onclick="back()">«</button>
-            <button onclick="operadores('*')" class="operador">*</button>
-            <button onclick="insert(7)">7</button>
-            <button onclick="insert(8)">8</button>
-            <button onclick="insert(9)">9</button>
-            <button class="trio" onclick="porcent()">%</button>
-            <button onclick="operadores('/')" class="operador">/</button>
-            <button onclick="insert(4)">4</button>
-            <button onclick="insert(5)">5</button>
-            <button onclick="insert(6)">6</button>
-            <button class="trio" onclick="ponto('.')">.</button>
-            <button onclick="operadores('-')" class="operador">-</button>
-            <button onclick="insert(1)">1</button>
-            <button onclick="insert(2)">2</button>
-            <button onclick="insert(3)">3</button>
-            <button class="trio" style="font-size: 1em;" ondblclick="doisClicks()" onclick="reset()">C/OFF</button>
-            <button onclick="operadores('+')" class="operador">+</button>
-            <button onclick="insert(0)" class="gemeos">0</button>
-            <button onclick="insert('00')" class="gemeos">00</button>
-            <button onclick="insert('000')" class="gemeos">000</button>
-            <button class="igual" onclick="calcular()" class="gemeos" style="width: 122px;">=</button>
+        <div class="teclado" id="teclado">
+            <div class="grade">
+                <button class="especiais" onclick="localC()">M</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="retornar()">MR</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="apagarMemoriaC()">MC</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="apagar()">«</button>
+            </div>
+            <div class="grade">
+                <button class="operadores" onclick="operadores('*')">*</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(7)">7</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(8)">8</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(9)">9</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="porcent()">%</button>
+            </div>
+            <div class="grade">
+                <button class="operadores" onclick="operadores('/')">/</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(4)">4</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(5)">5</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(6)">6</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="ponto('.')">.</button>
+            </div>
+            <div class="grade">
+                <button class="operadores" onclick="operadores('-')">-</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(1)">1</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(2)">2</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(3)">3</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" onclick="zerarDisplay()">C</button>
+            </div>
+            <div class="grade">
+                <button class="operadores" onclick="operadores('+')">+</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum(0)">0</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum('00')">00</button>
+            </div>
+            <div class="grade">
+                <button onclick="insertNum('000')">000</button>
+            </div>
+            <div class="grade">
+                <button class="especiais" id="especial" onclick="mute()">
+                <span class="material-icons">
+                        music_note
+                        </span>
+                </button>
+            </div>
+            <div class="grade">
+                <button class="igual" onclick="calcular()">=</button>
+            </div>
         </div>
-    </section>
-    <script src="index.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

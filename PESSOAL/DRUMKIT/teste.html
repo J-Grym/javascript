@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 96vh;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            height: 400px;
+        }
+        .container{
+            display: flex;
+        }
+        .key{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            color: red;
+            user-select: none;
+            transition: 0.1s;
+        }
+        .key:active{
+            width: 39px;
+            height: 39px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container" id="container">
+            <!--<div class="key">A</div>
+            <div class="key">S</div>
+            <div class="key">D</div>-->
+        </div>
+    </main>
+    <script>
+        const lt = {
+            'A': 'boom.wav',
+            'B': 'clap.wav',
+            'C': 'hihat.wav',
+        }
+        const insertDiv = (text) => {
+           const div = document.createElement('div')
+           div.classList.add('key')
+           div.textContent = text
+           div.id = text
+           document.getElementById('container').appendChild(div)
+        }
+        
+        const insertLetra = () => Object.keys(lt).forEach(insertDiv)
+        
+        insertLetra()
+
+        const ativarSom = (letra) => {
+            const som = new Audio(lt[letra])
+            som.play()
+        }
+
+        const ativarDiv = (event) => {
+            const letra = event.target.id
+            ativarSom(letra)
+        }
+
+        document.getElementById('container').addEventListener('click', ativarDiv)
+    </script>
+</body>
+</html>
