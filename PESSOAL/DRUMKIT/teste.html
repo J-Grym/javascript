@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>drum</title>
     <style>
         *{
             box-sizing: border-box;
@@ -54,28 +54,35 @@
             'C': 'hihat.wav',
         }
         const insertDiv = (text) => {
-           const div = document.createElement('div')
-           div.classList.add('key')
-           div.textContent = text
-           div.id = text
-           document.getElementById('container').appendChild(div)
+            const div = document.createElement('div')
+            div.classList.add("key")
+            div.textContent = text
+            div.id = text
+            document.getElementById('container').appendChild(div)
         }
-        
-        const insertLetra = () => Object.keys(lt).forEach(insertDiv)
-        
-        insertLetra()
+        const insertDivs = () => {
+            const letras = Object.keys(lt).forEach(insertDiv)
+        }
+        insertDivs()
 
-        const ativarSom = (letra) => {
+        const tocarSom = (letra) => {
             const som = new Audio(lt[letra])
             som.play()
         }
-
         const ativarDiv = (event) => {
-            const letra = event.target.id
-            ativarSom(letra)
+            let letra = ''
+            if(event.type == 'click'){
+                letra = event.target.id
+            }else{
+                letra = event.key.toUpperCase()
+            }
+            console.log(event)
+            tocarSom(letra)
         }
-
+        
         document.getElementById('container').addEventListener('click', ativarDiv)
+
+        window.addEventListener('keydown', ativarDiv)
     </script>
 </body>
 </html>
