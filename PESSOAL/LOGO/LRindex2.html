@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0px;
+            padding: 0px;
+            padding-top: 40px;
+            box-sizing: border-box;
+            height: 95vh;
+            background-color: black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tudo{
+            width: 700px;
+            height: 600px;
+            background-color: rgb(238, 238, 238);
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo{
+            position: absolute;
+            width: 200px;
+            height: 550px;
+            flex-direction: column;
+
+            display: flex;
+            justify-content: center;
+        }
+        .L{
+            position: absolute;
+            width: 110px;
+            height: 550px;
+
+            display: flex;
+        }
+        .Lvertical{
+            width: 30px;
+            height: 550px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: black;
+            border-bottom-left-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.826);
+        }
+        .Lhorizontal{
+            width: 82px; 
+            height: 30px;
+            align-self: flex-end;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: black;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.826);
+        }
+        .R {
+            position: absolute;
+            width: 119px;
+            height: 550px;
+            flex-direction: column;
+
+            display: flex;
+            align-self: flex-end;
+            flex-wrap: wrap;
+        }
+        .R div:nth-child(1){
+            position: absolute;
+            align-self: flex-end;
+            border: 1px solid black;
+            width: 118px;
+            height: 155px;
+            border-top-right-radius: 55px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 55px;
+            background-color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.826);
+            
+            display: flex;
+        }
+        .R div:nth-child(2){
+            position: absolute;
+            margin-top: 155px;
+            border: 1px solid black;
+            width: 30px;
+            height: 393px;
+            align-self: center;
+            transform: skew(7deg);
+            margin-left: 43px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 15px;
+            background-color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.826);
+            
+        }
+        .R div:nth-child(3){
+            position: absolute;
+            border: 1px solid black;
+            width: 30px;
+            height: 450px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            background-color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.826);
+            
+        }
+        .r1 div:nth-child(1){
+            border: 1px solid black;
+            width: 57px;
+            height: 100px;
+            margin-left: 32px;
+            background-color: rgb(238, 238, 238);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            border-top-left-radius: 0px;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tudo">
+        <div class="logo">
+            <div class="L">
+                <div class="Lvertical"></div>
+                <div class="Lhorizontal"></div>
+            </div>
+            <div class="R">
+                <div class="r1">
+                    <div></div>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
