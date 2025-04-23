@@ -154,6 +154,7 @@ const clickPermitido = conjunto.hasOwnProperty(digito)
             memoriaC = display.textContent
             memoria.style.backgroundColor = 'red'
             display.textContent = 0
+            gatilho = false
         }else if(digito == 'r'){
             display.textContent = memoriaC
         }else if(digito == 'c'){
@@ -181,9 +182,7 @@ const clickPermitido = conjunto.hasOwnProperty(digito)
             }else if(chave == true){
                 som = new Audio('tink.wav')
                 chave = false
-            }
-            
-            
+            } 
         }
     }
 }

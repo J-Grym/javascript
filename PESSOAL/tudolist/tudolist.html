@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 96vh;
+            text-align: center;
+            background-color: yellow;
+            margin-top: 20px;
+        }
+        .todo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .todo_tittle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            width: 500px;
+            height: 50px;
+            margin-bottom: 10px;
+            color: yellow;
+            font-weight: bold;
+        }
+        .todo_item{
+            display: flex;
+            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid black;
+            width: 500px;
+            height: 30px;
+            margin-bottom: 5px;
+            box-shadow: 2px 2px 5px black;
+            padding-right: 4px;
+        }
+        .todo_item:hover{
+            background-color: black;
+            color: yellow;
+        }
+        div.todo_new_item{
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            padding-left: 3px;
+            padding-right: 3px;
+            height: 25px;
+            font-size: 10px;
+        }
+        div.todo_new_item input{
+            width: 480px;
+            border: none;
+            text-align: center;
+        }
+        .todo_item > input[type="checkbox"]:checked + div{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo">
+        <div class="todo_tittle">
+            TODO_LIST
+        </div>
+        
+        <div class="todo_list" id="todoList"></div>
+        
+        <div class="todo_new_item">
+            <div>&and;</div>
+            <input placeholder="digite e pressione enter para adicionar a tarefa" type="text">
+            <div>&and;</div>
+        </div>
+    </div>
+    <script>
+        /*<label class="todo_item">
+                <input type="checkbox">
+                <div>test de item 2</div>
+                <input type="button" value="x">
+            </label>
+        */ 
+            
+            let dados = [
+                {'tarefa': 'estudar', 'status': ''},
+                {'tarefa': 'netflix', 'status': 'checked'},
+                {'tarefa': 'netflix', 'status': 'checked'}
+            ]
+            const criarItem = (tarefa, status) => {
+                const item = document.createElement('label')
+                item.classList.add('todo_item')
+                item.innerHTML = `
+                    <input type="checkbox" ${status} >
+                    <div>${tarefa}</div>
+                    <input type="button" value="x">
+                `
+                document.getElementById('todoList').appendChild(item)
+            }
+
+            const limparTarefas = () => {
+                const todoList = document.getElementById('todoList')
+                while (todolList.firstChild){
+                    todoList.removeChild(todoList.lastChild)
+                }
+            }
+
+            const atualizarTela = () => {
+                limparTarefas()
+                dados.forEach(item => criarItem(item.tarefa, item.status))
+            }
+
+            atualizarTela()
+    </script>
+</body>
+</html>
